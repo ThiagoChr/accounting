@@ -1,0 +1,6 @@
+.settings
+.checkstyle
+.classpath
+.pmd
+.project
+target

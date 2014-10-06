@@ -1,0 +1,4 @@
+accounting
+==========
+
+Advanced accounting framework

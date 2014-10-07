@@ -9,16 +9,16 @@ import br.accounting.domain.util.visualization.IAggregatableStructure;
 
 import com.google.common.base.Preconditions;
 
-public class AccountWithNature extends Account {
+public class AccountWithNatureDecorator extends Account {
 
     private final Account account;
     private final AccountingNature nature;
 
-    public AccountWithNature(Account account) {
+    public AccountWithNatureDecorator(Account account) {
         this(account, AccountingNature.POSITIVE);
     }
 
-    public AccountWithNature(Account account, AccountingNature nature) {
+    public AccountWithNatureDecorator(Account account, AccountingNature nature) {
         super(account.getName());
         this.account = Preconditions.checkNotNull(account,
                 "The account cannot be null!");

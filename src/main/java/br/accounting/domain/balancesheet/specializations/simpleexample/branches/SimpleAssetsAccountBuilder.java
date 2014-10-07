@@ -1,13 +1,13 @@
-package br.accounting.domain.balancesheet;
+package br.accounting.domain.balancesheet.specializations.simpleexample.branches;
 
-import br.accounting.domain.util.builder.IBuilder;
+import br.accounting.domain.balancesheet.AssetsAccountBuilder;
 
-public class AssetsBuilder implements IBuilder<Assets> {
+public class SimpleAssetsAccountBuilder implements AssetsAccountBuilder {
 
 	@Override
-	public Assets build() {
+	public SimpleAssetsAccount build() {
 
-		Assets assets = new Assets();
+		SimpleAssetsAccount assets = new SimpleAssetsAccount();
 
 		assets.addDescendentAccount(assets.getCash());
 		assets.addDescendentAccount(assets.getLongTermLoans());

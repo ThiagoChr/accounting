@@ -3,6 +3,8 @@ package br.accounting.domain.operators;
 public enum AccountName {
 
 	NO_NAME("Nameless account"), //
+	NULL_ACCOUNT("Null account"), //
+
 	CASH("Cash"), //
 	SHORT_TERM_LOANS("Short-term loans"), //
 	LONG_TERM_LOANS("Long-term loans"), //
@@ -18,7 +20,7 @@ public enum AccountName {
 
 	OWNER_EQUITY("Owner's equity"), //
 	EQUITIES("Equities"), //
-	
+
 	BALANCE_SHEET("Bank's balance sheet");
 
 	private String description;

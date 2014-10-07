@@ -4,36 +4,40 @@ import br.accounting.domain.operators.AccountName;
 import br.accounting.domain.operators.CompositeAccount;
 import br.accounting.domain.util.money.Money;
 
+import com.google.common.base.Preconditions;
+
+/**
+ * General stylized balance sheet. Inject the children accordingly to your
+ * needs.
+ */
 public class StylizedBalanceSheet extends CompositeAccount {
 
-	private Assets assets; // applications
+	private AssetsAccount assets; // applications
 
-	private Liabilities liabilities; // money from others
-	private OwnerEquity ownerEquity; // money from inside
+	private LiabilitiesAccount liabilities; // money from others
+	private OwnerEquityAccount ownerEquity; // money from inside
 
-	StylizedBalanceSheet() {
+	StylizedBalanceSheet(AssetsAccount assets, LiabilitiesAccount liabilities,
+			OwnerEquityAccount ownerEquity) {
 		super(AccountName.BALANCE_SHEET);
+
+		this.assets = Preconditions.checkNotNull(assets,
+				"The assets composite account cannot be null!");
+		this.liabilities = Preconditions.checkNotNull(liabilities,
+				"The liabilities composite account cannot be null!");
+		this.ownerEquity = Preconditions.checkNotNull(ownerEquity,
+				"The owner's equity composite account cannot be null!");
 	}
 
-	public Assets getAssets() {
-		if (assets == null) {
-			assets = new AssetsBuilder().build();
-		}
+	public AssetsAccount getAssets() {
 		return assets;
 	}
 
-	public Liabilities getLiabilities() {
-		if (liabilities == null) {
-			liabilities = new LiabilitiesBuilder().build();
-		}
+	public LiabilitiesAccount getLiabilities() {
 		return liabilities;
 	}
 
-	public OwnerEquity getOwnerEquity() {
-		if (ownerEquity == null) {
-			ownerEquity = new OwnerEquityBuilder().build();
-		}
-
+	public OwnerEquityAccount getOwnerEquity() {
 		return ownerEquity;
 	}
 

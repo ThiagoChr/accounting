@@ -1,20 +1,16 @@
-package br.accounting.domain.balancesheet;
+package br.accounting.domain.balancesheet.specializations.simpleexample.branches;
 
+import br.accounting.domain.balancesheet.AssetsAccount;
 import br.accounting.domain.operators.AccountName;
-import br.accounting.domain.operators.CompositeAccount;
 import br.accounting.domain.operators.SimpleAccount;
 
-public class Assets extends CompositeAccount {
+public class SimpleAssetsAccount extends AssetsAccount {
 
 	private SimpleAccount cash;
 	private SimpleAccount shortTermLoans;
 	private SimpleAccount longTermLoans;
 	private SimpleAccount securities;
 	private SimpleAccount otherAssets;
-
-	Assets() {
-		super(AccountName.ASSETS);
-	}
 
 	public SimpleAccount getCash() {
 		if (cash == null) {

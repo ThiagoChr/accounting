@@ -1,16 +1,12 @@
-package br.accounting.domain.balancesheet;
+package br.accounting.domain.balancesheet.specializations.simpleexample.branches;
 
+import br.accounting.domain.balancesheet.OwnerEquityAccount;
 import br.accounting.domain.operators.AccountName;
-import br.accounting.domain.operators.CompositeAccount;
 import br.accounting.domain.operators.SimpleAccount;
 
-public class OwnerEquity extends CompositeAccount {
+public class SimpleOwnerEquityAccount extends OwnerEquityAccount {
 
 	private SimpleAccount equities;
-
-	OwnerEquity() {
-		super(AccountName.OWNER_EQUITY);
-	}
 
 	public SimpleAccount getEquities() {
 		if (equities == null) {

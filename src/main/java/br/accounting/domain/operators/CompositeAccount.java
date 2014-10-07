@@ -11,7 +11,7 @@ import com.google.common.collect.Sets;
 
 public class CompositeAccount extends Account {
 
-    private final SortedSet<AccountWithNature> descendentAccounts = Sets
+    private final SortedSet<AccountWithNatureDecorator> descendentAccounts = Sets
             .newTreeSet();
 
     protected CompositeAccount(AccountName accountName) {
@@ -28,7 +28,7 @@ public class CompositeAccount extends Account {
         Preconditions.checkNotNull(newDescendent,
                 "The new descendent accounts must not be null!");
 
-        AccountWithNature accountWithNature = new AccountWithNature(
+        AccountWithNatureDecorator accountWithNature = new AccountWithNatureDecorator(
                 newDescendent, nature);
 
         Preconditions.checkState(descendentAccounts.add(accountWithNature),
@@ -60,7 +60,7 @@ public class CompositeAccount extends Account {
     }
 
     @Override
-    public SortedSet<AccountWithNature> getStructuralChildren() {
+    public SortedSet<AccountWithNatureDecorator> getStructuralChildren() {
         return descendentAccounts;
     }
 

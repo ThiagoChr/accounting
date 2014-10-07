@@ -6,19 +6,19 @@ import org.joda.time.LocalDate;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.accounting.domain.balancesheet.Assets;
-import br.accounting.domain.balancesheet.AssetsBuilder;
+import br.accounting.domain.balancesheet.specializations.simpleexample.branches.SimpleAssetsAccount;
+import br.accounting.domain.balancesheet.specializations.simpleexample.branches.SimpleAssetsAccountBuilder;
 import br.accounting.domain.util.money.Money;
 
 public class AssetsTest {
 
 	private static final LocalDate DATE = LocalDate.parse("2000-01-01");
 
-	private Assets assets;
+	private SimpleAssetsAccount assets;
 
 	@Before
 	public void setUp() {
-		assets = new AssetsBuilder().build();
+		assets = new SimpleAssetsAccountBuilder().build();
 	}
 
 	@Test

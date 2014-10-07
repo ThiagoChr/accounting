@@ -1,4 +1,4 @@
-package br.accounting.domain.accoutingtools;
+package br.accounting.domain.operators;
 
 import java.util.List;
 import java.util.SortedSet;

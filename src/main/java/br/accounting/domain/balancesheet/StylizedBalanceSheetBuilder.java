@@ -1,6 +1,6 @@
-package br.accounting.domain.bank;
+package br.accounting.domain.balancesheet;
 
-import br.accounting.domain.accoutingtools.AccountingNature;
+import br.accounting.domain.operators.AccountingNature;
 import br.accounting.domain.util.builder.IBuilder;
 
 public class StylizedBalanceSheetBuilder implements

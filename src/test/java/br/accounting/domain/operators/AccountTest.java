@@ -1,4 +1,4 @@
-package br.accounting.domain.accoutingtools;
+package br.accounting.domain.operators;
 
 import junit.framework.Assert;
 
@@ -7,6 +7,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
+import br.accounting.domain.operators.AccountName;
+import br.accounting.domain.operators.AccountingEntry;
+import br.accounting.domain.operators.SimpleAccount;
 import br.accounting.domain.util.money.Money;
 
 public class AccountTest {

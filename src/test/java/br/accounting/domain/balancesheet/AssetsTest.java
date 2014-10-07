@@ -1,4 +1,4 @@
-package br.accounting.domain.bank;
+package br.accounting.domain.balancesheet;
 
 import junit.framework.Assert;
 
@@ -6,6 +6,8 @@ import org.joda.time.LocalDate;
 import org.junit.Before;
 import org.junit.Test;
 
+import br.accounting.domain.balancesheet.Assets;
+import br.accounting.domain.balancesheet.AssetsBuilder;
 import br.accounting.domain.util.money.Money;
 
 public class AssetsTest {

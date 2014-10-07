@@ -1,4 +1,4 @@
-package br.accounting.domain.bank;
+package br.accounting.domain.balancesheet;
 
 import br.accounting.domain.util.builder.IBuilder;
 

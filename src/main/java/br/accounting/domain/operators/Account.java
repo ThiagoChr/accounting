@@ -1,4 +1,4 @@
-package br.accounting.domain.accoutingtools;
+package br.accounting.domain.operators;
 
 import org.joda.time.LocalDate;
 

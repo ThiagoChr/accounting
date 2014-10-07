@@ -7,9 +7,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import br.accounting.domain.accoutingtools.AccountName;
-import br.accounting.domain.accoutingtools.AccountingEntry;
-import br.accounting.domain.accoutingtools.SimpleAccount;
 import br.accounting.domain.util.money.Money;
 
 public class AccountTest {

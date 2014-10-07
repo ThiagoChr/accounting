@@ -6,22 +6,25 @@ import br.accounting.domain.util.money.Money;
 
 public class NullInterbankExposition implements IEdge {
 
-	public static NullInterbankExposition NULL = new NullInterbankExposition();
+    public static NullInterbankExposition NULL = new NullInterbankExposition();
 
-	private NullInterbankExposition() {
-		// constrained use
-	}
+    private NullInterbankExposition() {
+        // constrained use
+    }
 
-	public IVertex getSourceVertex() {
-		return null;
-	}
+    @Override
+    public IVertex getSourceVertex() {
+        return null;
+    }
 
-	public IVertex getDestinyVertex() {
-		return null;
-	}
+    @Override
+    public IVertex getDestinyVertex() {
+        return null;
+    }
 
-	public Money getWeight() {
-		return Money.ZERO;
-	}
+    @Override
+    public Money getWeight() {
+        return Money.ZERO;
+    }
 
 }

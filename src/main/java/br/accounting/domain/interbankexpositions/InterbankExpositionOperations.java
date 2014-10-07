@@ -16,46 +16,49 @@ import com.google.common.collect.Sets;
 
 public class InterbankExpositionOperations {
 
-	private InterbankExpositionOperations() {
-		// service class
-	}
+    private InterbankExpositionOperations() {
+        // service class
+    }
 
-	public static List<InterbankExposition> filterByDate(
-			List<InterbankExposition> unfilteredList,
-			final YearMonth filteringDate) {
+    public static List<InterbankExposition> filterByDate(
+            List<InterbankExposition> unfilteredList,
+            final YearMonth filteringDate) {
 
-		return Lists.newArrayList(Collections2.filter(unfilteredList,
-				new Predicate<InterbankExposition>() {
+        return Lists.newArrayList(Collections2.filter(unfilteredList,
+                new Predicate<InterbankExposition>() {
 
-					public boolean apply(InterbankExposition input) {
-						return input.getYearMonth().equals(filteringDate);
-					}
-				}));
+            @Override
+            public boolean apply(InterbankExposition input) {
+                return input.getYearMonth().equals(filteringDate);
+            }
+        }));
 
-	}
+    }
 
-	public static SortedSet<YearMonth> extractAllDates(
-			List<InterbankExposition> unfilteredList) {
+    public static SortedSet<YearMonth> extractAllDates(
+            List<InterbankExposition> unfilteredList) {
 
-		return Sets.newTreeSet(Collections2.transform(unfilteredList,
-				new Function<InterbankExposition, YearMonth>() {
-					public YearMonth apply(InterbankExposition input) {
-						return input.getYearMonth();
+        return Sets.newTreeSet(Collections2.transform(unfilteredList,
+                new Function<InterbankExposition, YearMonth>() {
 
-					};
-				}));
+            @Override
+            public YearMonth apply(InterbankExposition input) {
+                return input.getYearMonth();
 
-	}
+            };
+        }));
 
-	public static Money sum(Collection<InterbankExposition> list) {
+    }
 
-		Money totalAssets = Money.ZERO;
+    public static Money sum(Collection<InterbankExposition> list) {
 
-		for (InterbankExposition edge : list) {
+        Money totalAssets = Money.ZERO;
 
-			totalAssets = totalAssets.add(edge.getValue());
-		}
+        for (InterbankExposition edge : list) {
 
-		return totalAssets;
-	}
+            totalAssets = totalAssets.add(edge.getValue());
+        }
+
+        return totalAssets;
+    }
 }

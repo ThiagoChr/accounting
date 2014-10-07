@@ -6,8 +6,6 @@ import org.joda.time.LocalDate;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.accounting.domain.bank.StylizedBalanceSheet;
-import br.accounting.domain.bank.StylizedBalanceSheetBuilder;
 import br.accounting.domain.util.money.Money;
 
 public class StylizedBalanceSheetTest {

@@ -10,61 +10,62 @@ import com.google.common.base.Preconditions;
 
 public class AccountingEntry implements Comparable<AccountingEntry> {
 
-	private Money value;
-	private LocalDate dhValue;
+    private final Money value;
+    private final LocalDate dhValue;
 
-	private Long identifier;
+    private final Long identifier;
 
-	AccountingEntry(Money value, LocalDate dhValue) {
-		this.value = Preconditions.checkNotNull(value);
-		this.dhValue = Preconditions.checkNotNull(dhValue);
+    AccountingEntry(Money value, LocalDate dhValue) {
+        this.value = Preconditions.checkNotNull(value);
+        this.dhValue = Preconditions.checkNotNull(dhValue);
 
-		this.identifier = UUIDUtil.gerarLongUID();
-	}
+        this.identifier = UUIDUtil.gerarLongUID();
+    }
 
-	public Money getValue() {
-		return value;
-	}
+    public Money getValue() {
+        return value;
+    }
 
-	public LocalDate getDhValue() {
-		return dhValue;
-	}
+    public LocalDate getDhValue() {
+        return dhValue;
+    }
 
-	public boolean equals(Object obj) {
+    @Override
+    public boolean equals(Object obj) {
 
-		if (!(AccountingEntry.class.isInstance(obj))) {
-			return false;
-		}
+        if (!(AccountingEntry.class.isInstance(obj))) {
+            return false;
+        }
 
-		AccountingEntry other = AccountingEntry.class.cast(obj);
+        AccountingEntry other = AccountingEntry.class.cast(obj);
 
-		return this.identifier.equals(other.identifier);
-	}
+        return this.identifier.equals(other.identifier);
+    }
 
-	@Override
-	public int hashCode() {
-		return this.identifier.hashCode();
-	}
+    @Override
+    public int hashCode() {
+        return this.identifier.hashCode();
+    }
 
-	@Override
-	public int compareTo(AccountingEntry o) {
+    @Override
+    public int compareTo(AccountingEntry o) {
 
-		CompareToBuilder ctb = new CompareToBuilder();
+        CompareToBuilder ctb = new CompareToBuilder();
 
-		ctb.append(this.dhValue, o.dhValue);
-		ctb.append(this.value, o.value);
-		ctb.append(this.identifier, o.identifier);
+        ctb.append(this.dhValue, o.dhValue);
+        ctb.append(this.value, o.value);
+        ctb.append(this.identifier, o.identifier);
 
-		return ctb.toComparison();
-	}
+        return ctb.toComparison();
+    }
 
-	@Override
-	public String toString() {
-		return "$ " + getValue();
-	}
+    @Override
+    public String toString() {
+        return "$ " + getValue();
+    }
 
-	public boolean isNotAfter(LocalDate referenceDate) {
-		return !getDhValue().isAfter(referenceDate);
-	}
+    public boolean isNotAfter(LocalDate referenceDate) {
+        return !getDhValue().isAfter(referenceDate);
+    }
 
 }

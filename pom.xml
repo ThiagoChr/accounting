@@ -5,7 +5,6 @@
 	<groupId>br</groupId>
 	<artifactId>accounting</artifactId>
 	<version>1.0</version>
-	<packaging>jar</packaging>
 
 	<name>Accounting Framework</name>
 	<description>Advanced accounting framework</description>
@@ -27,8 +26,6 @@
 		<poi.version>3.9</poi.version>
 		<java-uuid-generator.version>3.1.3</java-uuid-generator.version>
 		<lambdaj.version>2.3.3</lambdaj.version>
-		
-
 	</properties>
 
 	<dependencies>

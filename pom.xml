@@ -2,13 +2,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>br.gov.bcb</groupId>
-	<artifactId>multilayer-networks</artifactId>
+	<groupId>br</groupId>
+	<artifactId>accounting</artifactId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
 
-	<name>DEPEP - Programas</name>
-	<description>Programas úteis para pesquisa</description>
+	<name>Accounting Framework</name>
+	<description>Advanced accounting framework</description>
 	<inceptionYear>2014</inceptionYear>
 	<url>http://maven.apache.org</url>
 
@@ -19,7 +19,7 @@
 		<junit.version>4.10</junit.version>
 		<mockito.version>1.9.5</mockito.version>
 		<guava.version>11.0.2</guava.version>
-		<apache-csv-commons.version>1.0-SNAPSHOT</apache-csv-commons.version>
+		<apache-csv-commons.version>1.0</apache-csv-commons.version>
 		<opencsv.version>2.3</opencsv.version>
 		<joda-time.version>2.4</joda-time.version>
 		<commons-lang3.version>3.3.2</commons-lang3.version>
